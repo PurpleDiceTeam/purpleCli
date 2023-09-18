@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { input } from '@inquirer/prompts';
-
+import copyFolder from '../utils/copyFolder.js'
 
 const initExpressProyect = async () => {
 
@@ -24,12 +24,15 @@ const initExpressProyect = async () => {
 
   /* Verify if dir already exist */
   if (fs.existsSync(proyectFolderDir)) {
-    console.log(`Error folder "${proyectName}" already exists`);
+    console.error(`Error folder "${proyectName}" already exists`);
+    process.exit(0);
   } else {
     /* Create proyect folder */
     fs.mkdirSync(proyectName);
   }
-
+  
+  copyFolder(templateFolderDir, proyectFolderDir)
+  
 }
 
 export default initExpressProyect;
