@@ -1,6 +1,7 @@
 import select, { Separator } from '@inquirer/select';
+import initExpressProyect from './expressProyect/expressProyect.js'
 
-const newProyect = async (consoleRoute) => {
+const newProyect = async () => {
 
   /* Select the frameWork */
 const selectValue = await select({
@@ -25,7 +26,7 @@ switch (selectValue) {
 
   case "express":
     /* ./Routes/newProyect/newProyect.js */
-     console.log(consoleRoute)
+     initExpressProyect()
     break;
 }
 

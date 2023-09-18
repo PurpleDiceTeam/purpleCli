@@ -1,9 +1,6 @@
 import select, { Separator } from '@inquirer/select';
 import newProyect from './Routes/newProyect/newProyect.js';
 
-/* Get console route */
-const consoleRoute = process.cwd()
-
 /* Select the first option */
 const selectValue = await select({
 
@@ -34,7 +31,7 @@ switch (selectValue) {
 
   case "newProyect":
     /* ./Routes/newProyect/newProyect.js */
-     newProyect(consoleRoute)
+     newProyect()
     break;
 
   case "addMCR":
