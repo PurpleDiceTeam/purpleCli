@@ -1,13 +1,13 @@
 import fs from 'fs';
 
-const copyFolder = (templateFolderDir, proyectFolderDir) => {
+const copyFolder = (templateFolderDir, projectFolderDir) => {
   /* Reading template folder content */
   const items = fs.readdirSync(templateFolderDir);
 
   /* For content template folder */
   items.forEach(item => {
     const sourcePath = `${templateFolderDir}/${item}`
-    const targetPath = `${proyectFolderDir}/${item}`
+    const targetPath = `${projectFolderDir}/${item}`
 
     if (fs.lstatSync(sourcePath).isDirectory()) {
       /* if folder copy with content */

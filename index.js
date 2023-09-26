@@ -1,5 +1,5 @@
 import select, { Separator } from '@inquirer/select';
-import newProyect from './Routes/newProyect/newProyect.js';
+import newProject from './Routes/newProject/newProject.js';
 
 /* Select the first option */
 const selectValue = await select({
@@ -10,8 +10,8 @@ const selectValue = await select({
 
     /* Create a new proyect */
     {
-      name: 'Create a new proyect',
-      value: 'newProyect',
+      name: 'Create a new project',
+      value: 'newProject',
       description: 'Init a new project template',
     },
 
@@ -19,7 +19,7 @@ const selectValue = await select({
     {
       name: 'Add model, controller or route',
       value: 'addMCR',
-      description: 'Add Model, controller or route in yout proyect',
+      description: 'Add Model, controller or route in yout project',
     },
 
     new Separator(),
@@ -29,9 +29,9 @@ const selectValue = await select({
 /* Redirect to the select option function */
 switch (selectValue) {
 
-  case "newProyect":
+  case "newProject":
     /* ./Routes/newProyect/newProyect.js */
-     newProyect()
+     newProject()
     break;
 
   case "addMCR":
